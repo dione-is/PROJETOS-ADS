@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1622294789 source:c:\users\dione\documents\teste\disk156_v01.02\inicializar.c
+	"tipos.h"
+
+1622928826 c:\users\dione\documents\teste\disk156_v01.02\tipos.h
+	<conio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+
+1623972186 source:c:\users\dione\documents\teste\disk156_v01.02\main.c
+	"tipos.h"
+
+1622298692 source:c:\users\dione\documents\teste\disk156_v01.02\apresentarsolicitacaopendente.c
+	"tipos.h"
+
+1623891768 source:c:\users\dione\documents\teste\disk156_v01.02\inserirsolicitacao.c
+	"tipos.h"
+
+1623972465 source:c:\users\dione\documents\teste\disk156_v01.02\encerrarsolicitacao.c
+	"tipos.h"
+
+1622988231 source:c:\users\dione\documents\teste\disk156_v01.02\buscarsolicitacao.c
+	"tipos.h"
+
