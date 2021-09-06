@@ -44,13 +44,48 @@ TNo* inserir (TNo *raiz, TProduto produto)
 	return raiz;
 }
 
+void preOrdem(TNo *raiz){
+    system(cls); 
+    textbackground(0);
+    textcolor(15); 
+	if (raiz != NULL)
+	{
+        printf("\n=====================================");
+		printf("\n|  Nome: %s",raiz->produto.nome);
+		printf("\n|  Data Plantio: %s", raiz->produto.dataPlantio);
+		printf("\n|  Prazo Colheita: %d dias",raiz->produto.prazoColheita);
+		printf("\n|  Terreno: %.2f metros quadrados",raiz->produto.terreno);
+		printf("\n=====================================");
+		preOrdem(raiz->esq);
+		preOrdem(raiz->dir);
+	}
+	system("pause");
+}
 	
-
+void posOrdem(TNo *raiz){
+    system(cls); 
+    textbackground(0);
+    textcolor(15);
+	if (raiz != NULL)
+	{
+		posOrdem(raiz->esq);
+		posOrdem(raiz->dir);
+		printf("\n=====================================");
+		printf("\n|  Nome: %s",raiz->produto.nome);
+		printf("\n|  Data Plantio: %s", raiz->produto.dataPlantio);
+		printf("\n|  Prazo Colheita: %d dias",raiz->produto.prazoColheita);
+		printf("\n|  Terreno: %.2f metros quadrados",raiz->produto.terreno);
+		printf("\n=====================================");
+	}
+	system("pause");
+}
 
 
 
 void emOrdem(TNo *raiz){
-    
+    system(cls);
+    textbackground(0);
+    textcolor(15);
 	if (raiz != NULL)
 	{
 		emOrdem(raiz->esq);
@@ -63,6 +98,7 @@ void emOrdem(TNo *raiz){
 	    emOrdem(raiz->dir);
 		
 	}
+	system("pause");
 }
 
 void relatorio(){
@@ -179,118 +215,97 @@ int main()
 
              if(op==1){
                        
-                       do{
-                     textcolor(4);
-                     textbackground(0);
-                     gotoxy(70,10); printf(" Inserir Produto               ");
-                     gotoxy(70,11); printf(" Apresentar Produto - Pre-Ordem");
-                     gotoxy(70,12); printf(" Apresentar Produto - Em-Ordem ");
-                     gotoxy(70,13); printf(" Apresentar Produto - Pos-Ordem");
-                     gotoxy(70,14); printf(" Sair                          ");
-
-                     textcolor(4);
-                     textbackground(15);
-                     switch (op){
-                          case 1:
-                             gotoxy(70,10); printf(" Inserir Produto               ");
-                             break;
-                          case 2:
-                             gotoxy(70,11); printf(" Apresentar Produto - Pre-Ordem");
-                             break;
-                          case 3:
-                             gotoxy(70,12); printf(" Apresentar Produto - Em-Ordem ");
-                             break;
-                          case 4:
-                             gotoxy(70,12); printf(" Apresentar Produto - Pos-Ordem");
-                             break;
-                          case 5:
-                             gotoxy(70,12); printf(" Sair                          ");
-                             break;
-                             }
-
-                      tecla=getch();
-
-                      if (tecla<0)
-                         tecla=getch();
-
-                      switch (tecla){
-                             case 72:
-                                  if (op-1>=1)
-                                     op--;
-                                  else
-                                      op=5;
-                                      break;
-                             case 80:
-                                  if (op+1<=5)
-                                     op++;
-                                  else
-                                      op=1;
-                                      break;
-                             case 13:
-                                  if(op==1)
-                                           game(30);
-
-                                  else
-                                      if(op==2)
-                                               game(10);
-
+                       
+                       
+                       textbackground(0);
+                       system("cls");
+                       
+	                    do{
+                         textcolor(15);
+                         textbackground(3);
+                         gotoxy(50,10); printf(" Inserir Produto               ");
+                         gotoxy(50,11); printf(" Apresentar Produto - Pre-Ordem");
+                         gotoxy(50,12); printf(" Apresentar Produto - Em-Ordem ");
+                         gotoxy(50,13); printf(" Apresentar Produto - Pos-Ordem");
+                         gotoxy(50,14); printf(" Sair                          ");
+    
+                         textcolor(0);
+                         textbackground(2);
+                         switch (op){
+                              case 1:
+                                 gotoxy(50,10); printf(" Inserir Produto               ");
+                                 break;
+                              case 2:
+                                 gotoxy(50,11); printf(" Apresentar Produto - Pre-Ordem");
+                                 break;
+                              case 3:
+                                 gotoxy(50,12); printf(" Apresentar Produto - Em-Ordem ");
+                                 break;
+                              case 4:
+                                 gotoxy(50,13); printf(" Apresentar Produto - Pos-Ordem");
+                                 break;
+                              case 5:
+                                 gotoxy(50,14); printf(" Sair                          ");
+                                 break;
+                                 }
+    
+                          tecla=getch();
+    
+                          if (tecla<0)
+                             tecla=getch();
+    
+                          switch (tecla){
+                                 case 72:
+                                      if (op-1>=1)
+                                         op--;
                                       else
-                                          if(op==3)
-                                                   game(1);
-                                                  }
-
-                     }
-                     while(tecla!=27 && tecla!=13);
+                                          op=5;
+                                          break;
+                                 case 80:
+                                      if (op+1<=5)
+                                         op++;
+                                      else
+                                          op=1;
+                                          break;
+                                 case 13:
+                                      if(op==1){
+                                                
+                                               textbackground(0);
+                                               textcolor(15);
+                                               system("cls");
+                                               gotoxy(50,10);printf("Informe o nome do Produto: ");
+                                               fflush(stdin);
+                                               gets(auxProduto.nome);
+                                               gotoxy(50,11);printf("informe a data de plantio: ");
+                                               fflush(stdin);
+                                               gets(auxProduto.dataPlantio);
+                                               gotoxy(50,12);printf("Prazo para colheita(dias): ");
+                                               scanf("%d",&auxProduto.prazoColheita);
+                                               gotoxy(50,13);printf("tamanho do terreno(metro quadrados): ");
+                                               scanf("%f",&auxProduto.terreno);
+                                            
+                                               raiz = inserir(raiz,auxProduto);
+                                               }         
+                                      else
+                                          if(op==2)
+                                                   preOrdem(raiz);
+                                          else
+                                              if(op==3)
+                                                       emOrdem(raiz);
+                                              else
+                                                  if(op==4)
+                                                           posOrdem(raiz); 
+                                                  else
+                                                      if(op==5)
+                                                               tecla = 27;
+						                                                      
+                                                      }    
+                                                                                                                                
+                          }while(tecla!=27 && tecla!=13);
+                     
                      tecla=0;
                      op=1;
                      }
-                       
-                       textbackground(0);
-                       textcolor(15);
-                       system("cls");
-	                   char valor;
-	                   int opcao;
-	                   
-	                   if(raiz == NULL){
-                           printf("Nao existem produtos cadastrado\n\n");
-                           printf("Inserir novo produto ?[1]Sim [2]Nao\n");
-                           scanf("%d",&opcao);
-                           if(opcao == 1) {
-                                printf("Informe o nome do Produto: ");
-                                fflush(stdin);
-                                gets(auxProduto.nome);
-                                printf("informe a data de plantio: ");
-                                fflush(stdin);
-                                gets(auxProduto.dataPlantio);
-                                printf("Prazo para colheita(dias): ");
-                                scanf("%d",&auxProduto.prazoColheita);
-                                printf("tamanho do terreno(metro quadrados): ");
-                                scanf("%f",&auxProduto.terreno);
-                                
-                                raiz = inserir(raiz,auxProduto);
-                           }
-                       }else {                               
-                    		emOrdem(raiz); 
-                            printf("\nInserir novo produto ?[1]Sim [2]Nao\n");
-                            scanf("%d",&opcao);
-                            if(opcao == 1) {
-                                printf("Informe o nome do Produto: ");
-                                fflush(stdin);
-                                gets(auxProduto.nome);
-                                printf("informe a data de plantio: ");
-                                fflush(stdin);
-                                gets(auxProduto.dataPlantio);
-                                printf("Prazo para colheita(dias): ");
-                                scanf("%d",&auxProduto.prazoColheita);
-                                printf("tamanho do terreno(metro quadrados): ");
-                                scanf("%f",&auxProduto.terreno);
-                                
-                                raiz = inserir(raiz,auxProduto);
-                            }                         
-                       }        
-                       
-                       system("pause");
-             }
 
              if (op==2){
              
