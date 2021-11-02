@@ -19,39 +19,7 @@ import com.ddigGroup.ddigGroup.services.FuncionarioService;
 
 @RestController
 @RequestMapping("/api/funcionario")
-public class FuncionairoController {
+public class FuncionairoController extends BaseController<FuncionarioService, Funcionario> {
 	
-	@Autowired
-	private FuncionarioService service;
 	
-	@GetMapping
-	public List<Funcionario> obterTodos(){
-		return service.obterTodos();
-	}
-	
-	@GetMapping("/{id}")
-	public Funcionario obterPeloId(@PathVariable("id")String id) {
-		return service.obterPeloId(id);
-	}
-	
-	@PostMapping
-	@ResponseStatus(code = HttpStatus.CREATED)
-	public String post(@RequestBody Funcionario novo) {
-		return service.insert(novo);
-		
-	}
-	
-	@PutMapping
-	public void atualizar(@PathVariable("id")String id, @RequestBody Funcionario funcionario) {
-		if(!id.equals(funcionario.getId())) 
-			throw new RequisicaoPutInvalida();
-		
-		service.atualizar(funcionario);
-		
-	}
-
-	@DeleteMapping("/{id")
-	public void excluirPeloId(@PathVariable("id")String id) {
-		service.excluirPeloId(id);
-	}
 }
