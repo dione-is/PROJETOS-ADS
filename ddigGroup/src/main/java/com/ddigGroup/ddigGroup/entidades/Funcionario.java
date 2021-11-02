@@ -13,6 +13,8 @@ public class Funcionario {
 	private String id;
 	private String nome;
 	private String CPF;
+	private String telefone;
+	private String Senha;
 	private String email;
 	private nivelAcesso nivelAcesso;
 	
@@ -56,6 +58,24 @@ public class Funcionario {
 		return id;
 	}
 	
+	
+	
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getSenha() {
+		return Senha;
+	}
+
+	public void setSenha(String senha) {
+		Senha = senha;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
