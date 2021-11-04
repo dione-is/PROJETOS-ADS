@@ -2,12 +2,10 @@ package com.ddigGroup.ddigGroup.entidades;
 
 public enum nivelAcesso {
 	
-	VISUALIZAR("visualizar"),
-	MANUTENCAO("manutenção"),
-	PERMISSAOTOTAL("permissãoTotal");
+	VISUALIZAR,
+	MANUTENCAO,
+	PERMISSAOTOTAL;
 
-	nivelAcesso(String nivel) {
-		
-			}
+
 
 }

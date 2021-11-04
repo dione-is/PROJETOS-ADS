@@ -45,7 +45,7 @@ public class BaseController<SERVICE extends BaseService, ENTITY extends BaseEnti
 		
 	}
 	
-	@PutMapping
+	@PutMapping("/{id}")
 	public void atualizar(@PathVariable("id")String id, @RequestBody ENTITY entidade) {
 		if(!id.equals(entidade.getId())) 
 			throw new RequisicaoPutInvalida();
@@ -54,7 +54,7 @@ public class BaseController<SERVICE extends BaseService, ENTITY extends BaseEnti
 		
 	}
 
-	@DeleteMapping("/{id")
+	@DeleteMapping("/{id}")
 	public void excluirPeloId(@PathVariable("id")String id) {
 		service.excluirPeloId(id);
 	}

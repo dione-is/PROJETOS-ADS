@@ -3,6 +3,8 @@ package com.ddigGroup.ddigGroup.entidades;
 import java.util.UUID;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 
@@ -15,7 +17,9 @@ public class Funcionario extends BaseEntidade {
 	private String telefone;
 	private String Senha;
 	private String email;
-	//private nivelAcesso nivelAcesso;
+	
+	@Enumerated(EnumType.STRING)
+	private nivelAcesso nivelAcesso;
 	
 	
 
@@ -43,13 +47,13 @@ public class Funcionario extends BaseEntidade {
 		this.email = email;
 	}
 
-	/*public nivelAcesso getNivelAcesso() {
+	public nivelAcesso getNivelAcesso() {
 		return nivelAcesso;
 	}
 
 	public void setNivelAcesso(nivelAcesso nivelAcesso) {
 		this.nivelAcesso = nivelAcesso;
-	}	*/
+	}	
 	
 	public String getTelefone() {
 		return telefone;
