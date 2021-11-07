@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Plantacao extends BaseEntidade {
 	
 	
-	/*private String nomePlanta;
+	private String nomePlanta;
 	private Terreno Terreno;
 	private Date dataPlantio;
 	private Date dataColheita;
@@ -56,7 +56,7 @@ public class Plantacao extends BaseEntidade {
 	public void setCulturaPlanta(CulturaPlanta culturaPlanta) {
 		this.culturaPlanta = culturaPlanta;
 	}
-*/
+
 	
 	
 }

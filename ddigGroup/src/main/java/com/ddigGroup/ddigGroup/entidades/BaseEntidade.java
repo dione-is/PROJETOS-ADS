@@ -16,9 +16,9 @@ public class BaseEntidade {
 		this.id = UUID.randomUUID().toString();
 	}
 	
-	public BaseEntidade(String id) {
+	/*public BaseEntidade(String id) {
 		this.id = id;
-	}
+	}*/
 	
 	public String getId() {
 		return id;
