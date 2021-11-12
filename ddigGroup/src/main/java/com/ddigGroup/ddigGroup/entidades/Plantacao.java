@@ -3,18 +3,31 @@ package com.ddigGroup.ddigGroup.entidades;
 import java.util.Date;
 import java.util.UUID;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Plantacao extends BaseEntidade {
 	
 	
 	private String nomePlanta;
+	@ManyToOne
+	@JoinColumn(name="terreno_id")
 	private Terreno Terreno;
 	private Date dataPlantio;
 	private Date dataColheita;
+	@ManyToOne
+	@JoinColumn(name="culturaPlanta_id")
 	private CulturaPlanta culturaPlanta;
+	
+	public Plantacao() {
+		super();
+	}
 	
 
 	public String getNomePlanta() {

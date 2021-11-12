@@ -15,9 +15,6 @@ public class Terreno extends BaseEntidade{
 	private float largura;
 	private float areaTotal;
 	
-	public Terreno() {
-		this.id = UUID.randomUUID().toString();
-	}
 
 	public int getLote() {
 		return lote;
