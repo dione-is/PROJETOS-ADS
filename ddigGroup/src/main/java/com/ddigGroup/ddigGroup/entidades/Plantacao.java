@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -11,25 +12,29 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.engine.internal.Cascade;
+
 
 @Entity
 public class Plantacao extends BaseEntidade {
 	
-	
+	@Column(nullable = false)
 	private String nomePlanta;
 	
 	@OneToOne
 	@JoinColumn(name = "terreno_id")
 	private Terreno terreno;
+	
+	@Column(nullable = false)
 	private Date dataPlantio;
+	
+	@Column(nullable = false)
 	private Date dataColheita;
 	
 	@ManyToOne
 	@JoinColumn(name = "cultura_id")
 	private CulturaPlanta culturaPlanta;
 	
-	
-
 	public String getNomePlanta() {
 		return nomePlanta;
 	}
@@ -68,8 +73,5 @@ public class Plantacao extends BaseEntidade {
 
 	public void setCulturaPlanta(CulturaPlanta culturaPlanta) {
 		this.culturaPlanta = culturaPlanta;
-	}
-
-	
-	
+	}	
 }

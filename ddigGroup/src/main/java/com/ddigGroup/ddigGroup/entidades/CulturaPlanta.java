@@ -2,16 +2,20 @@ package com.ddigGroup.ddigGroup.entidades;
 
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-
 
 
 @Entity
 public class CulturaPlanta extends BaseEntidade{
 	
+	@Column(nullable = false)
 	private String nome;
+	
+	@Column(nullable = false)
 	private String caracteristicas;
+	
+	@Column(nullable = false)
 	private String requisitosNPK;
 	
 	
@@ -38,5 +42,4 @@ public class CulturaPlanta extends BaseEntidade{
 	public void setRequisitosNPK(String requisitosNPK) {
 		this.requisitosNPK = requisitosNPK;
 	}
-
 }
