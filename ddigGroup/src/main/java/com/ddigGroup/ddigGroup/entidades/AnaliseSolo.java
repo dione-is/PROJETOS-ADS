@@ -7,17 +7,13 @@ import javax.persistence.Id;
 
 @Entity
 public class AnaliseSolo  extends BaseEntidade{
-	@Id
-	private String id;
+	
 	
 	private float nitrogenio;
 	private float fosforo;
 	private float potassio;
 	
-	public AnaliseSolo() {
-		this.id = UUID.randomUUID().toString();
-	}
-	
+
 	public float getNitrogenio() {
 		return nitrogenio;
 	}
@@ -36,9 +32,7 @@ public class AnaliseSolo  extends BaseEntidade{
 	public void setPotassio(float potassio) {
 		this.potassio = potassio;
 	}
-	public String getId() {
-		return id;
-	}
+	
 	
 	
 }

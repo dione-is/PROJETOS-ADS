@@ -5,8 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class MonitoramentoPlantio extends BaseEntidade {
-	@Id
-	private String id;
+
 	private float progressoPlanta;
 	private String faseAtualCultivo;
 	
@@ -23,9 +22,7 @@ public class MonitoramentoPlantio extends BaseEntidade {
 	public void setFaseAtualCultivo(String faseAtualCultivo) {
 		this.faseAtualCultivo = faseAtualCultivo;
 	}
-	public String getId() {
-		return id;
-	}
+	
 	
 	
 }

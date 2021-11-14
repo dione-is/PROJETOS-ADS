@@ -9,17 +9,12 @@ import javax.persistence.Id;
 
 @Entity
 public class CulturaPlanta extends BaseEntidade{
-	@Id
-	private String id;
+	
 	private String nome;
 	private String caracteristicas;
 	private String requisitosNPK;
 	
-	public CulturaPlanta() {
-		this.id = UUID.randomUUID().toString();
-		
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -44,7 +39,4 @@ public class CulturaPlanta extends BaseEntidade{
 		this.requisitosNPK = requisitosNPK;
 	}
 
-	public String getId() {
-		return id;
-	}	
 }

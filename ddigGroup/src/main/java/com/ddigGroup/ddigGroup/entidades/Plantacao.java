@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -16,18 +17,17 @@ public class Plantacao extends BaseEntidade {
 	
 	
 	private String nomePlanta;
-	@ManyToOne
-	@JoinColumn(name="terreno_id")
-	private Terreno Terreno;
+	
+	@OneToOne
+	@JoinColumn(name = "terreno_id")
+	private Terreno terreno;
 	private Date dataPlantio;
 	private Date dataColheita;
+	
 	@ManyToOne
-	@JoinColumn(name="culturaPlanta_id")
+	@JoinColumn(name = "cultura_id")
 	private CulturaPlanta culturaPlanta;
 	
-	public Plantacao() {
-		super();
-	}
 	
 
 	public String getNomePlanta() {
@@ -39,11 +39,11 @@ public class Plantacao extends BaseEntidade {
 	}
 
 	public Terreno getTerreno() {
-		return Terreno;
+		return terreno;
 	}
 
 	public void setTerreno(Terreno tamanhoTerreno) {
-		Terreno = tamanhoTerreno;
+		this.terreno = tamanhoTerreno;
 	}
 
 	public Date getDataPlantio() {

@@ -7,7 +7,7 @@ import com.ddigGroup.ddigGroup.entidades.Terreno;
 import com.ddigGroup.ddigGroup.services.TerrenoService;
 
 @RestController
-@RequestMapping("/api/Terreno")
+@RequestMapping("/api/terreno")
 public class TerrenoController extends BaseController<TerrenoService, Terreno>{
 
 }
